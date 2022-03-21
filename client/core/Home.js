@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
+import Divider from '@material-ui/core/Divider'
+import {listPublished} from './../course/api-course'
+import {listEnrolled, listCompleted} from '../enrollment/api-enrollment.js'
 import Typography from '@material-ui/core/Typography'
-import floatingImg from './../assets/images/floating.jpg'
+import auth from './../auth/auth-helper'
+import Courses from './../course/Courses'
+
 
 const useStyles = makeStyles(theme => ({
   card: {
