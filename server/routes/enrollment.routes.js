@@ -9,11 +9,11 @@ router.route('/api/enrollment/enrolled').get(authCtrl.requireSignin, enrollmentC
 
 router.route('/api/enrollment/new/:courseId').post(authCtrl.requireSignin, enrollmentCtrl.findEnrollment, enrollmentCtrl.create)
 
-router.route('/api/enrollement/stats/:courseId').get(enrollmentCtrl.enrollmentStats)
+router.route('/api/enrollment/stats/:courseId').get(enrollmentCtrl.enrollmentStats)
 
 router.route('/api/enrollment/complete/:enrollmentId').put(authCtrl.requireSignin, enrollmentCtrl.isStudent, enrollmentCtrl.complete)
 
-router.route('/api/enrollement/:enrollmentId')
+router.route('/api/enrollment/:enrollmentId')
     .get(authCtrl.requireSignin, enrollmentCtrl.isStudent, enrollmentCtrl.read)
     .delete(authCtrl.requireSignin, enrollmentCtrl.isStudent, enrollmentCtrl.remove)
 

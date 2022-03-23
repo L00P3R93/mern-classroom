@@ -43,7 +43,7 @@ const enrollmentStats = async (params, credentials, signal) => {
 
 const read = async (params, credentials, signal) => {
     try {
-        let response = await('/api/enrollment/' + params.enrollmentId, {
+        let response = await fetch('/api/enrollment/' + params.enrollmentId, {
             method: 'GET',
             signal: signal,
             headers: {

@@ -120,7 +120,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Enrollment({match}){
     const classes = useStyles()
-    cont [enrollment, setEnrollment] = useState({course:{instructor:[]}, lessonStatus: []})
+    const [enrollment, setEnrollment] = useState({course:{instructor:[]}, lessonStatus: []})
     const [values, setValues] = useState({error:'', drawer: -1})
     const [totalComplete, setTotalComplete] = useState(0)
     const jwt = auth.isAuthenticated()
